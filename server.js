@@ -16,9 +16,12 @@ app.use('/uploads', express.static('./uploads'));
 app.use(helmet());
 app.use(compression());
 
-app.route('/').get(function (req, res) {
-    res.sendFile(process.cwd() + '/index.html');
+//Index page at default entry route
+app.route("/").get(function (req, res) {
+    res.sendFile(process.cwd() + "/index.html");
 });
+
+  
 const listener = app.listen(process.env.PORT || 3000, () => {
     console.log('App is listening on port ' + listener.address().port)
 })
@@ -29,12 +32,8 @@ mongoose.connect(
     {
         useUnifiedTopology: true, 
         useNewUrlParser: true,
-        server: {
-            socketOptions: {keepAlive: 300000, connectTimeoutMS: 30000}
-        },
-        replset: {
-            socketOptions: {keepAlive: 300000, connectTimeoutMS: 30000}
-        }
+        server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+        replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     }, (err) => {
         if (err) return console.log("Error: ", err);
         console.log("MongoDB connection -- Ready state is: ", mongoose.connection.readyState);
