@@ -1,0 +1,28 @@
+{
+  "name": "trestapi",
+  "version": "1.0.0",
+  "description": "Jasmine Tea",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aromatic",
+    "china",
+    "sweet"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "engines": {
+    "node": "v16.14.0"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "mongoose": "^6.3.1",
+    "multer": "^1.4.4"
+  }
+}
