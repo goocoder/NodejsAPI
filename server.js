@@ -31,9 +31,9 @@ mongoose.connect(
     process.env.MONGODB_URI,
     {
         useUnifiedTopology: true, 
-        useNewUrlParser: true,
-        server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-        replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+        useNewUrlParser: true
+        // server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+        // replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
     }, (err) => {
         if (err) return console.log("Error: ", err);
         console.log("MongoDB connection -- Ready state is: ", mongoose.connection.readyState);
